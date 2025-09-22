@@ -21,8 +21,8 @@ import {
 } from "lucide-react";
 
 export default function Prices() {
-  const [billingCycle, setBillingCycle] = useState("monthly"); // 'monthly' or 'annual'
-  const [hoveredPlan, setHoveredPlan] = useState(null);
+  const [billingCycle, setBillingCycle] = useState("monthly");
+  const [setHoveredPlan] = useState(null);
 
   const plans = [
     {
@@ -309,7 +309,7 @@ export default function Prices() {
 
                 <div className="space-y-3">
                   <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wide">
-                    What's included
+                    What&apos;s included
                   </h4>
                   {plan.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start gap-3">

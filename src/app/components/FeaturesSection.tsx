@@ -15,13 +15,11 @@ import {
   Smartphone,
   Globe,
   CheckCircle,
-  ArrowRight,
   Zap,
   Eye,
   TrendingUp,
   FileText,
   CreditCard,
-  Route,
   Bell,
   Settings,
   Activity,
@@ -30,7 +28,7 @@ import {
 export default function FeaturesSection() {
   const [activeTab, setActiveTab] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredFeature, setHoveredFeature] = useState(null);
+  const [setHoveredFeature] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -271,19 +269,6 @@ export default function FeaturesSection() {
         },
       ],
     },
-  ];
-
-  const techStack = [
-    {
-      name: "Python & Django",
-      description: "Robust backend framework",
-      icon: "🐍",
-    },
-    { name: "PostgreSQL", description: "Enterprise database", icon: "🐘" },
-    { name: "React & Vite", description: "Modern frontend", icon: "⚛️" },
-    { name: "Redux Toolkit", description: "State management", icon: "🏪" },
-    { name: "Tailwind CSS", description: "Responsive design", icon: "🎨" },
-    { name: "JWT Security", description: "Secure authentication", icon: "🔐" },
   ];
 
   return (

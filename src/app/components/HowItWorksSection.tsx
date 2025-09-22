@@ -17,7 +17,6 @@ import {
   Star,
   CheckCircle,
   ArrowRight,
-  X,
 } from "lucide-react";
 
 export default function CRMLandingPage() {
