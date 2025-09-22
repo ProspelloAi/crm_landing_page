@@ -7,7 +7,7 @@ import { gsap } from "gsap";
 import { motion } from "framer-motion";
 
 export default function CallToAction() {
-  const buttonRef = useRef<HTMLAnchorElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
   const shineRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
