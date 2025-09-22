@@ -4,12 +4,9 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "../../../src/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.5]);
-
   return (
     <section className="relative bg-[#FAFAFA] min-h-screen flex items-center justify-center overflow-hidden pt-16">
       <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none"></div>

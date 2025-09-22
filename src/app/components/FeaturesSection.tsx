@@ -28,7 +28,7 @@ import {
 export default function FeaturesSection() {
   const [activeTab, setActiveTab] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-  const [setHoveredFeature] = useState(null);
+
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -358,12 +358,7 @@ export default function FeaturesSection() {
           {/* Feature Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             {featureTabs[activeTab].features.map((feature, index) => (
-              <div
-                key={index}
-                className="group relative"
-                onMouseEnter={() => setHoveredFeature(index)}
-                onMouseLeave={() => setHoveredFeature(null)}
-              >
+              <div key={index} className="group relative">
                 <div
                   className={`absolute -inset-1 bg-gradient-to-r ${featureTabs[activeTab].color} rounded-3xl blur opacity-20 group-hover:opacity-30 transition-all duration-300`}
                 />

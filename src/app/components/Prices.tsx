@@ -54,7 +54,6 @@ export default function Prices() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">(
     "monthly"
   );
-  const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
 
   const plans: Plan[] = [
     {
@@ -291,8 +290,6 @@ export default function Prices() {
                 } ${colors.border} border-2 ${
                   plan.highlight ? "transform scale-105" : ""
                 }`}
-                onMouseEnter={() => setHoveredPlan(index)}
-                onMouseLeave={() => setHoveredPlan(null)}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
