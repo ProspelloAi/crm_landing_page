@@ -11,15 +11,12 @@ import {
   Database,
   Shield,
   BarChart3,
-  Headphones,
   Globe,
   Smartphone,
   FileText,
   Route,
   CreditCard,
   Package,
-  Activity,
-  Target,
   ChevronRight,
 } from "lucide-react";
 
