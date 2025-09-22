@@ -18,13 +18,45 @@ import {
   CreditCard,
   Package,
   ChevronRight,
+  LucideIcon,
 } from "lucide-react";
 
-export default function Prices() {
-  const [billingCycle, setBillingCycle] = useState("monthly");
-  const [setHoveredPlan] = useState(null);
+// Define interfaces for type safety
+interface Feature {
+  name: string;
+  included: boolean;
+}
 
-  const plans = [
+interface Plan {
+  name: string;
+  description: string;
+  price: { monthly: number; annual: number };
+  icon: LucideIcon;
+  color: "gray" | "blue" | "purple";
+  popular: boolean;
+  features: Feature[];
+  cta: string;
+  highlight: boolean;
+}
+
+interface AdditionalFeature {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+export default function Prices() {
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">(
+    "monthly"
+  );
+  const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
+
+  const plans: Plan[] = [
     {
       name: "Free",
       description: "Perfect for getting started",
@@ -52,7 +84,7 @@ export default function Prices() {
     {
       name: "Professional",
       description: "For growing businesses",
-      price: { monthly: 29, annual: 290 }, // annual = monthly * 10 (2 months free)
+      price: { monthly: 29, annual: 290 },
       icon: Zap,
       color: "blue",
       popular: true,
@@ -99,7 +131,7 @@ export default function Prices() {
     },
   ];
 
-  const additionalFeatures = [
+  const additionalFeatures: AdditionalFeature[] = [
     {
       icon: Users,
       title: "Customer Management",
@@ -142,7 +174,7 @@ export default function Prices() {
     },
   ];
 
-  const faqs = [
+  const faqs: FAQ[] = [
     {
       question: "Can I change plans anytime?",
       answer:
@@ -164,7 +196,7 @@ export default function Prices() {
     },
   ];
 
-  const getColorClasses = (color, highlight = false) => {
+  const getColorClasses = (color: Plan["color"], highlight = false) => {
     const colors = {
       gray: {
         bg: highlight ? "bg-gray-50" : "bg-white",
@@ -193,7 +225,7 @@ export default function Prices() {
     return colors[color];
   };
 
-  const calculateSavings = (monthly, annual) => {
+  const calculateSavings = (monthly: number, annual: number) => {
     const monthlyCost = monthly * 12;
     const savings = monthlyCost - annual;
     const percentage = Math.round((savings / monthlyCost) * 100);

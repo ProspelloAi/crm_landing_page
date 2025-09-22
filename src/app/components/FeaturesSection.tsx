@@ -274,7 +274,7 @@ export default function FeaturesSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 bg-gradient-to-b from-white to-gray-50/50 overflow-hidden"
+      className="relative py-0 bg-gradient-to-b from-white to-gray-50/50 overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
